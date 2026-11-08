@@ -1,16 +1,17 @@
 # Project State
 
-Last updated: `2026-11-08T14:57:31Z`
-Status: `PUBLIC_REPO_PUSHED_ARCHIVE_PENDING`
-Active objective: Publish a portable copy of all currently installed Codex skills and the prior local backup for transfer to the user's WhatsApp agent.
+Last updated: `2026-11-08T15:01:41Z`
+Status: `COMPLETE`
+Active objective: Completed: publish a portable copy of all currently installed Codex skills and the prior local backup for transfer to the user's WhatsApp agent.
 
 ## Workspace
 
 - Repository: `/home/rouma/codex-skills-export`
 - Branch: `main`
 - Content commit: `26e3a15a10d370f021d641b5d2c49bc8a8667fef`
-- Latest verified commit before this receipt: `4abaeff633def4088fd2d2bc6629c1f19cb60a51`
+- Latest verified GitHub commit before this state receipt: `94eb8827e20e4873c52c5778e4ef913b11dfd6f4`
 - Remote: `https://github.com/dmetagame/codex-skills-export` (`origin`, public)
+- The `main` branch tracks `origin/main`; the published content and state receipts are verified there.
 - Protected releases: none
 
 ## Scope and decisions
@@ -26,14 +27,16 @@ Active objective: Publish a portable copy of all currently installed Codex skill
 - 378 user skills, 5 system skills, 66 plugin-cache skills, and 44 local-backup skills: 493 entries total.
 - 2,716 payload files, 73,161,027 bytes before archive compression.
 - All 2,716 files match their SHA-256 entries in `MANIFEST.json`.
+- Local attachment archive: sibling file `codex-skills-export-backup.zip`; 53,913,762 bytes; SHA-256 `642493a4207db2991c9b4b839c94b8b015310771ded332e7103a854dd8f9f890`. It contains 2,719 ZIP members, and all 2,716 payload entries were rechecked against the manifest inside the archive.
 - High-confidence credential-pattern scan found 0 matches. Generated metadata has no absolute workspace paths; no workspace username or home-path references were found in the skill payload.
 - `git diff --cached --check` reports existing trailing whitespace and extra blank lines in imported skill files; their payload bytes are preserved.
 - No functional tests apply to this documentation and asset export.
 
-## Next actions
+## Handoff
 
-1. Create a local ZIP backup for direct WhatsApp attachment and verify its contents against `MANIFEST.json`.
-2. Record the archive details here and in the workspace handoff.
+- Share `https://github.com/dmetagame/codex-skills-export` with the WhatsApp agent so it can fetch the public repository.
+- If the agent needs an attachment instead, send `codex-skills-export-backup.zip` as a document. It contains the README, index, manifest, and all skill folders/support files; it excludes Git internals.
+- The final state receipt was published to `main`; after publication, local HEAD and the remote `main` hash were verified to match.
 
 ## Change log
 
@@ -42,3 +45,4 @@ Active objective: Publish a portable copy of all currently installed Codex skill
 | 2026-11-08T14:48:53Z | Built and verified local skill export | 493 skills / 2,716 files inventoried; full hash check passed; publication pending |
 | 2026-11-08T14:51:42Z | Committed verified local export | `26e3a15a10d370f021d641b5d2c49bc8a8667fef`; worktree clean; public push pending |
 | 2026-11-08T14:57:31Z | Published the skill export | Public repo reports `isPrivate: false`; `origin/main` hash matched local `4abaeff633def4088fd2d2bc6629c1f19cb60a51`; local archive pending |
+| 2026-11-08T15:01:41Z | Created and verified local WhatsApp archive | ZIP has 2,719 entries; all 2,716 skill payload files match manifest hashes; SHA-256 `642493a4207db2991c9b4b839c94b8b015310771ded332e7103a854dd8f9f890` |
