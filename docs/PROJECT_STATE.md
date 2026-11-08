@@ -1,14 +1,14 @@
 # Project State
 
-Last updated: `2026-11-08T14:48:53Z`
-Status: `LOCAL_EXPORT_VERIFIED_PUBLICATION_PENDING`
+Last updated: `2026-11-08T14:51:42Z`
+Status: `LOCAL_EXPORT_COMMITTED_PUBLICATION_PENDING`
 Active objective: Publish a portable copy of all currently installed Codex skills and the prior local backup for transfer to the user's WhatsApp agent.
 
 ## Workspace
 
 - Repository: `/home/rouma/codex-skills-export`
 - Branch: `main`
-- Commit: none yet
+- Content commit: `26e3a15a10d370f021d641b5d2c49bc8a8667fef`
 - Remote: not yet configured; public GitHub repository `dmetagame/codex-skills-export` is available and user-authorized
 - Protected releases: none
 
@@ -31,13 +31,13 @@ Active objective: Publish a portable copy of all currently installed Codex skill
 
 ## Next actions
 
-1. Review and commit the scoped export files on `main`.
-2. Create/push the public GitHub repository after local commit.
-3. Verify local HEAD, upstream branch, and remote commit; create a local ZIP backup for direct WhatsApp attachment.
-4. Record the verified commit and archive details here and in the workspace handoff.
+1. Create and push the public GitHub repository from local commit `26e3a15a10d370f021d641b5d2c49bc8a8667fef`.
+2. Verify local HEAD, upstream branch, and remote commit; create a local ZIP backup for direct WhatsApp attachment.
+3. Record the verified remote and archive details here and in the workspace handoff.
 
 ## Change log
 
 | Timestamp | Event | Result |
 | --- | --- | --- |
 | 2026-11-08T14:48:53Z | Built and verified local skill export | 493 skills / 2,716 files inventoried; full hash check passed; publication pending |
+| 2026-11-08T14:51:42Z | Committed verified local export | `26e3a15a10d370f021d641b5d2c49bc8a8667fef`; worktree clean; public push pending |
